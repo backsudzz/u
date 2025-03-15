@@ -4,19 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 웹페이지</title>
+    <style>
+        /* 숨김 처리 스타일 */
+        .text-content {
+            display: none;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <h1 style="color:blue;">삼성페이 사용 방법</h1>
-    <iframe width="640" height="360" 
+    <iframe id="videoPlayer" width="640" height="360" 
         src="https://www.youtube.com/embed/DyPJpcsF7Ww" 
         frameborder="0" allowfullscreen>
     </iframe>
+    <button onclick="toggleText('samsungText')">글로 보기</button>
+    <div id="samsungText" class="text-content">
+        <p>삼성페이를 사용하는 방법에 대한 설명이 여기에 나옵니다. 삼성페이는 스마트폰을 이용해 결제를 할 수 있는 서비스로...</p>
+    </div>
 
     <h1 style="color:green;">신용카드 사용 방법</h1>
-    <iframe width="640" height="360" 
+    <iframe id="videoPlayer2" width="640" height="360" 
         src="https://www.youtube.com/embed/6xu_II0d-qE" 
         frameborder="0" allowfullscreen>
     </iframe>
+    <button onclick="toggleText('creditCardText')">글로 보기</button>
+    <div id="creditCardText" class="text-content">
+        <p>신용카드를 사용하는 방법에 대한 설명이 여기에 나옵니다. 신용카드는 전 세계에서 널리 사용되는 결제 수단으로...</p>
+    </div>
+
+    <script>
+        // 텍스트 보이기/숨기기 함수
+        function toggleText(id) {
+            const textElement = document.getElementById(id);
+            if (textElement.style.display === "none") {
+                textElement.style.display = "block"; // 텍스트 보이기
+            } else {
+                textElement.style.display = "none"; // 텍스트 숨기기
+            }
+        }
+    </script>
 </body>
 </html>
+
 
